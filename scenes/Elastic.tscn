@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/gameplay/elastic_tex.png" id="1"]
+
+[node name="Elastic" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1")
+_sections_unfolded = ["Transform3D"]
+
+[node name="FixationPoint" type="Marker2D" parent="." index="1"]

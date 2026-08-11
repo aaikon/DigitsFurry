@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/gameplay/spot_red.png" id="1"]
+
+[node name="Spot" type="Sprite2D"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1")
+_sections_unfolded = ["Transform3D"]

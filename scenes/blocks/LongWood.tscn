@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/blocks/Block.tscn" id="1"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(160.532, 20)
+
+[sub_resource type="Animation" id="2"]
+resource_name = "1_weak"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(631, 664, 161, 21.5)]
+}
+
+[sub_resource type="Animation" id="3"]
+resource_name = "2_average"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(791.5, 622, 162, 21.5)]
+}
+
+[sub_resource type="Animation" id="4"]
+resource_name = "3_good"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(630.5, 601.5, 162, 20.5)]
+}
+
+[sub_resource type="Animation" id="5"]
+resource_name = "4_healthy"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(792.5, 560, 161.5, 20)]
+}
+
+[node name="LongWood" instance=ExtResource("1")]
+
+[node name="Texture2D" parent="." index="0"]
+region_rect = Rect2(792.5, 560, 161.5, 20)
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("1")
+
+[node name="AnimationPlayer" parent="." index="2"]
+anims/1_weak = SubResource("2")
+anims/2_average = SubResource("3")
+anims/3_good = SubResource("4")
+anims/4_healthy = SubResource("5")

@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://cf255icvetuvu"]
+
+[ext_resource type="PackedScene" path="res://scenes/Damageable.tscn" id="1"]
+[ext_resource type="Script" uid="uid://1hbqf2dh3m2u" path="res://scenes/birds/Bird.gd" id="2"]
+
+[sub_resource type="Animation" id="1"]
+resource_name = "idle"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 3.1, 3.4, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(87, 7.875, 78, 76.125), Rect2(2, 7.875, 84.5, 76.125), Rect2(87, 7.875, 78, 76.125), Rect2(2, 7.875, 84.5, 76.125), Rect2(87, 7.875, 78, 76.125)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Texture2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3, 3.1, 3.4, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(1, 1), Vector2(0.92, 1), Vector2(1, 1), Vector2(0.92, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2nkbd"]
+_data = {
+&"idle": SubResource("1")
+}
+
+[node name="Bird" unique_id=2121131207 groups=["Bird"] instance=ExtResource("1")]
+input_pickable = true
+can_sleep = false
+script = ExtResource("2")
+TRANSFER_SPEED = 500
+health = 50
+survive_points = 2000
+
+[node name="Texture2D" parent="." index="0"]
+region_rect = Rect2(87, 7.875, 78, 76.125)
+
+[node name="AttachPoint" type="Marker2D" parent="." index="2" unique_id=1870334183]
+position = Vector2(-35.6004, 8.29051)
+
+[node name="AnimationPlayer" parent="." index="3"]
+libraries/ = SubResource("AnimationLibrary_2nkbd")

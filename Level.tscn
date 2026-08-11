@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://de4e33gx6l4ko"]
+
+[ext_resource type="Script" uid="uid://cy4b4vy66vv2e" path="res://Level.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bsrmy34p18arc" path="res://assets/gameplay/background_1.jpg" id="2"]
+[ext_resource type="Script" uid="uid://bxo3yh2f7eiy1" path="res://scenes/Camera.gd" id="3"]
+[ext_resource type="PackedScene" path="res://EndLevel.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://scenes/Slingshot.tscn" id="5"]
+[ext_resource type="PackedScene" path="res://scenes/ennemies/LittleGreen.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://cf255icvetuvu" path="res://scenes/birds/Bird.tscn" id="7"]
+[ext_resource type="PackedScene" path="res://scenes/blocks/LongWood.tscn" id="8"]
+[ext_resource type="PackedScene" path="res://scenes/Gameover.tscn" id="9"]
+[ext_resource type="PackedScene" path="res://scenes/GUI.tscn" id="10"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(280, 1440)
+
+[node name="Level" type="Node" unique_id=1506047709]
+script = ExtResource("1")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=493803031]
+z_index = -10
+position = Vector2(1279.37, 716.676)
+texture = ExtResource("2")
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=1884506177]
+position = Vector2(1330, 1350)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground" unique_id=268914035]
+polygon = PackedVector2Array(-1330, -100, 1230, -100, 1230, 90, -1330, 90)
+
+[node name="EastWall" type="StaticBody2D" parent="." unique_id=934941171]
+position = Vector2(2700, 710)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EastWall" unique_id=1156519973]
+position = Vector2(0, 10)
+shape = SubResource("1")
+
+[node name="WestWall" type="StaticBody2D" parent="." unique_id=795510035]
+position = Vector2(2700, 710)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WestWall" unique_id=1854632752]
+position = Vector2(-2840, 10)
+shape = SubResource("1")
+
+[node name="Camera3D" type="Camera2D" parent="." unique_id=763137631]
+limit_left = 0
+limit_top = 0
+limit_right = 2560
+limit_bottom = 1440
+script = ExtResource("3")
+
+[node name="Birds" type="Node2D" parent="." unique_id=1007884818]
+position = Vector2(551.34, 1221)
+
+[node name="Bird" parent="Birds" unique_id=270275144 instance=ExtResource("7")]
+position = Vector2(-194.597, 4.42261)
+
+[node name="Bird2" parent="Birds" unique_id=1289207870 instance=ExtResource("7")]
+position = Vector2(-290.033, 2.09497)
+
+[node name="Bird3" parent="Birds" unique_id=1135849098 instance=ExtResource("7")]
+position = Vector2(-429.696, -0.232786)
+
+[node name="Ennemies" type="Node2D" parent="." unique_id=1979917374]
+position = Vector2(1784.93, 1215.97)
+
+[node name="LittleGreen" parent="Ennemies" unique_id=2079749703 instance=ExtResource("6")]
+position = Vector2(203.521, -198.214)
+
+[node name="LittleGreen3" parent="Ennemies" unique_id=581705795 instance=ExtResource("6")]
+position = Vector2(208.13, -20.6334)
+
+[node name="Blocks" type="Node2D" parent="." unique_id=1841249061]
+position = Vector2(2155.01, 1205.9)
+
+[node name="LongWood" parent="Blocks" unique_id=975895747 instance=ExtResource("8")]
+position = Vector2(-161.699, 28.8707)
+
+[node name="LongWood4" parent="Blocks" unique_id=323745888 instance=ExtResource("8")]
+position = Vector2(-165.475, -144.802)
+
+[node name="LongWood2" parent="Blocks" unique_id=1091308338 instance=ExtResource("8")]
+position = Vector2(-235.969, -60.4078)
+rotation = -1.5737
+
+[node name="LongWood3" parent="Blocks" unique_id=476868720 instance=ExtResource("8")]
+position = Vector2(-92.5002, -58.5201)
+rotation = -1.5737
+
+[node name="Slingshot" parent="." unique_id=2043783961 instance=ExtResource("5")]
+position = Vector2(606.729, 1150.52)
+TRAJECTORY_VISIBILITY = false
+
+[node name="GUI" parent="." unique_id=359945209 instance=ExtResource("10")]
+
+[node name="EndLevel" parent="." unique_id=40352077 instance=ExtResource("4")]
+score_levels = {
+1: 2000,
+2: 4000,
+3: 5500
+}
+
+[node name="Gameover" parent="." unique_id=300225839 instance=ExtResource("9")]
+
+[connection signal="end_game" from="GUI" to="." method="_on_GUI_end_game"]
+[connection signal="restart_level" from="EndLevel" to="." method="_on_EndLevel_restart_level"]
+[connection signal="restart_level" from="Gameover" to="." method="_on_Gameover_restart_level"]
