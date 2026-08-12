@@ -21,6 +21,9 @@ var _birds_node: Node = null
 
 func _ready():
 	$StructuresWindow.world_2d = get_tree().root.world_2d
+	# Off by default in Godot 4 -- without it, CollisionObject2D._input_event
+	# (how Bird.gd detects being picked up) never fires, mouse or touch.
+	get_viewport().physics_object_picking = true
 	load_layout(0)
 
 # Kiosk deployment: this window (slingshot/touch), StructuresWindow (pigs),
