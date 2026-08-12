@@ -33,6 +33,11 @@ func _ready():
 func _unhandled_key_input(event):
 	KioskWindow.handle_fullscreen_toggle(get_window(), event)
 
+# TEMP DEBUG -- remove once touch click behavior is diagnosed.
+func _input(event):
+	if event is InputEventScreenTouch or event is InputEventScreenDrag or event is InputEventMouseButton:
+		print("[MainWindow input] ", event)
+
 func load_layout(index: int):
 	current_layout_index = index
 	game_ended = false

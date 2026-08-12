@@ -22,3 +22,8 @@ func _on_max_score_changed(new_max):
 
 func _unhandled_key_input(event):
 	KioskWindow.handle_fullscreen_toggle(self, event)
+
+# TEMP DEBUG -- remove once touch click behavior is diagnosed.
+func _input(event):
+	if event is InputEventScreenTouch or event is InputEventScreenDrag or event is InputEventMouseButton:
+		print("[AdminWindow input] ", event)
