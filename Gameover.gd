@@ -1,17 +1,12 @@
 extends CanvasLayer
 
-signal restart_level
-
 func _ready():
 	$PanelContainer.hide()
-	$RestartButton.hide()
-	
+
 func display():
 	await get_tree().create_timer(1).timeout
 	$PanelContainer.show()
-	await get_tree().create_timer(2).timeout
-	$RestartButton.show()
-	$PanelContainer/Message.text = "Restart ?"
+	$PanelContainer/Message.text = "Game Over"
 
-func _on_RestartButton_pressed():
-	emit_signal("restart_level")
+func reset():
+	$PanelContainer.hide()

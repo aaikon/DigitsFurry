@@ -9,8 +9,6 @@ extends CanvasLayer
 var animated_score
 var score_tween: Tween
 
-signal restart_level
-
 func _ready():
 	$Background.hide()
 	set_process(false)
@@ -30,6 +28,11 @@ func display(score):
 	score_tween = create_tween()
 	score_tween.tween_property(self, "animated_score", score, 2).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
 
-
-func _on_RestartButton_pressed():
-	emit_signal("restart_level")
+func reset():
+	if score_tween:
+		score_tween.kill()
+	set_process(false)
+	animated_score = 0
+	$Background.hide()
+	for level in score_levels.keys():
+		get_node("Background/Star" + str(level)).hide()

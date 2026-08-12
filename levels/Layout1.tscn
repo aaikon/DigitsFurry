@@ -1,0 +1,30 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/ennemies/LittleGreen.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/blocks/LongWood.tscn" id="2"]
+
+[node name="Layout1" type="Node2D"]
+
+[node name="Ennemies" type="Node2D" parent="."]
+
+[node name="LittleGreen" parent="Ennemies" instance=ExtResource("1")]
+position = Vector2(1988.45, 1017.76)
+
+[node name="LittleGreen2" parent="Ennemies" instance=ExtResource("1")]
+position = Vector2(1993.06, 1195.34)
+
+[node name="Blocks" type="Node2D" parent="."]
+
+[node name="Base" parent="Blocks" instance=ExtResource("2")]
+position = Vector2(1993.31, 1234.77)
+
+[node name="Roof" parent="Blocks" instance=ExtResource("2")]
+position = Vector2(1989.54, 1061.1)
+
+[node name="LegLeft" parent="Blocks" instance=ExtResource("2")]
+position = Vector2(1919.04, 1145.49)
+rotation = -1.5737
+
+[node name="LegRight" parent="Blocks" instance=ExtResource("2")]
+position = Vector2(2062.51, 1147.38)
+rotation = -1.5737

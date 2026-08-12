@@ -1,0 +1,41 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/ennemies/LittleGreen.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/blocks/LongWood.tscn" id="2"]
+
+[node name="Layout2" type="Node2D"]
+
+[node name="Ennemies" type="Node2D" parent="."]
+
+[node name="LittleGreenBase" parent="Ennemies" instance=ExtResource("1")]
+position = Vector2(1990, 1150)
+
+[node name="LittleGreenTop" parent="Ennemies" instance=ExtResource("1")]
+position = Vector2(1988, 830)
+
+[node name="Blocks" type="Node2D" parent="."]
+
+[node name="Base" parent="Blocks" instance=ExtResource("2")]
+position = Vector2(1993.31, 1234.77)
+
+[node name="Tier1LegLeft" parent="Blocks" instance=ExtResource("2")]
+position = Vector2(1919.04, 1145.49)
+rotation = -1.5737
+
+[node name="Tier1LegRight" parent="Blocks" instance=ExtResource("2")]
+position = Vector2(2062.51, 1147.38)
+rotation = -1.5737
+
+[node name="Tier1Platform" parent="Blocks" instance=ExtResource("2")]
+position = Vector2(1989.54, 1061.1)
+
+[node name="Tier2LegLeft" parent="Blocks" instance=ExtResource("2")]
+position = Vector2(1919.0, 970.0)
+rotation = -1.5737
+
+[node name="Tier2LegRight" parent="Blocks" instance=ExtResource("2")]
+position = Vector2(2058.0, 970.0)
+rotation = -1.5737
+
+[node name="TopRoof" parent="Blocks" instance=ExtResource("2")]
+position = Vector2(1988.0, 882.0)

@@ -2,8 +2,6 @@
 
 [ext_resource type="Script" path="res://Gameover.gd" id="1"]
 [ext_resource type="FontFile" path="res://assets/GUI/RammettoOne-Regular.ttf" id="2"]
-[ext_resource type="PackedScene" path="res://scenes/RestartButton.tscn" id="3"]
-[ext_resource type="Texture2D" path="res://assets/GUI/btn_restart.png" id="4"]
 
 [sub_resource type="FontFile" id="1"]
 fallbacks = Array[Font]([ExtResource("2")])
@@ -35,12 +33,3 @@ theme_override_fonts/font = SubResource("1")
 text = "Gameover"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="RestartButton" parent="." instance=ExtResource("3")]
-offset_left = -55.0
-offset_top = -200.034
-offset_right = 55.0
-offset_bottom = -86.0338
-texture_normal = ExtResource("4")
-
-[connection signal="pressed" from="RestartButton" to="." method="_on_RestartButton_pressed"]

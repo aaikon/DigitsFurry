@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" path="res://assets/GUI/star_2.png" id="6"]
 [ext_resource type="Texture2D" path="res://assets/GUI/star_3.png" id="7"]
 [ext_resource type="FontFile" path="res://assets/GUI/RammettoOne-Regular.ttf" id="8"]
-[ext_resource type="PackedScene" path="res://scenes/RestartButton.tscn" id="9"]
 
 [sub_resource type="FontFile" id="1"]
 fallbacks = Array[Font]([ExtResource("8")])
@@ -105,7 +104,3 @@ theme_override_fonts/font = SubResource("1")
 text = "20000"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="RestartButton" parent="Background" instance=ExtResource("9")]
-
-[connection signal="pressed" from="Background/RestartButton" to="." method="_on_RestartButton_pressed"]

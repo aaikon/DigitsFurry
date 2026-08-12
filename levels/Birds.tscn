@@ -1,0 +1,14 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/birds/Bird.tscn" id="1"]
+
+[node name="Birds" type="Node2D"]
+
+[node name="Bird" parent="." instance=ExtResource("1")]
+position = Vector2(356.743, 1225.42)
+
+[node name="Bird2" parent="." instance=ExtResource("1")]
+position = Vector2(261.307, 1223.09)
+
+[node name="Bird3" parent="." instance=ExtResource("1")]
+position = Vector2(121.644, 1220.77)

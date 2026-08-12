@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://duxmrydgjj6fm"]
+
+[ext_resource type="PackedScene" path="res://scenes/ennemies/LittleGreen.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/blocks/LongWood.tscn" id="2"]
+
+[node name="Layout3" type="Node2D" unique_id=437969184]
+
+[node name="Ennemies" type="Node2D" parent="." unique_id=510800701]
+
+[node name="PigLeft" parent="Ennemies" unique_id=1262439869 instance=ExtResource("1")]
+position = Vector2(1800, 1218)
+
+[node name="PigMid" parent="Ennemies" unique_id=1769967046 instance=ExtResource("1")]
+position = Vector2(1980, 1218)
+
+[node name="PigRight" parent="Ennemies" unique_id=271492866 instance=ExtResource("1")]
+position = Vector2(2160, 1218)
+
+[node name="Blocks" type="Node2D" parent="." unique_id=1331717469]
+
+[node name="LeftLegA" parent="Blocks" unique_id=1649521515 instance=ExtResource("2")]
+position = Vector2(1730, 1146)
+rotation = -1.5737
+
+[node name="LeftLegB" parent="Blocks" unique_id=1682947367 instance=ExtResource("2")]
+position = Vector2(1870, 1146)
+rotation = -1.5737
+
+[node name="LeftRoof" parent="Blocks" unique_id=1759789617 instance=ExtResource("2")]
+position = Vector2(1800, 1061)
+
+[node name="MidLegA" parent="Blocks" unique_id=2058717673 instance=ExtResource("2")]
+position = Vector2(1910, 1146)
+rotation = -1.5737
+
+[node name="MidLegB" parent="Blocks" unique_id=2022569449 instance=ExtResource("2")]
+position = Vector2(2050, 1146)
+rotation = -1.5737
+
+[node name="MidRoof" parent="Blocks" unique_id=894670855 instance=ExtResource("2")]
+position = Vector2(1980, 1061)
+
+[node name="RightLegA" parent="Blocks" unique_id=1084983132 instance=ExtResource("2")]
+position = Vector2(2090, 1146)
+rotation = -1.5737
+
+[node name="RightLegB" parent="Blocks" unique_id=33110224 instance=ExtResource("2")]
+position = Vector2(2230, 1146)
+rotation = -1.5737
+
+[node name="RightRoof" parent="Blocks" unique_id=915118041 instance=ExtResource("2")]
+position = Vector2(2160, 1061)
