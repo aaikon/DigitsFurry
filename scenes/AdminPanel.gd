@@ -5,6 +5,10 @@ extends Window
 
 func _ready():
 	var level = get_parent()
+	# TEMP DEBUG -- remove once touch click behavior is diagnosed.
+	$Panel/VBox/ResetButton.button_down.connect(func(): print("[AdminPanel] ResetButton button_down"))
+	$Panel/VBox/ResetButton.button_up.connect(func(): print("[AdminPanel] ResetButton button_up"))
+	$Panel/VBox/ResetButton.pressed.connect(func(): print("[AdminPanel] ResetButton pressed (click registered)"))
 	$Panel/VBox/ResetButton.pressed.connect(func(): level.load_layout(level.current_layout_index))
 	$Panel/VBox/Layout1Button.pressed.connect(func(): level.load_layout(0))
 	$Panel/VBox/Layout2Button.pressed.connect(func(): level.load_layout(1))
