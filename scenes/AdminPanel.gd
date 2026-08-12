@@ -19,3 +19,6 @@ func _on_score_changed(new_score):
 
 func _on_max_score_changed(new_max):
 	max_label.text = "Max: %d" % new_max
+
+func _unhandled_key_input(event):
+	KioskWindow.handle_fullscreen_toggle(self, event)

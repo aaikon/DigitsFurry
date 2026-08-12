@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" path="res://scenes/GUI.tscn" id="10"]
 [ext_resource type="Script" uid="uid://b052m5snhffea" path="res://scenes/AdminPanel.gd" id="11"]
 [ext_resource type="Theme" uid="uid://bw1pc7vxjyq8b" path="res://default_theme.tres" id="12"]
+[ext_resource type="Script" path="res://scenes/StructuresWindow.gd" id="13"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(280, 1440)
@@ -55,6 +56,7 @@ oversampling_override = 1.0
 title = "Structures & Pigs"
 initial_position = 1
 size = Vector2i(560, 350)
+script = ExtResource("13")
 
 [node name="StructuresCamera" type="Camera2D" parent="StructuresWindow" unique_id=33772883]
 limit_left = 0

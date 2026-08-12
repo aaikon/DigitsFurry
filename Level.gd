@@ -23,6 +23,13 @@ func _ready():
 	$StructuresWindow.world_2d = get_tree().root.world_2d
 	load_layout(0)
 
+# Kiosk deployment: this window (slingshot/touch), StructuresWindow (pigs),
+# and AdminWindow (operator controls) each live on their own monitor. Drag
+# each window to its physical monitor, then press F11 on it to lock it
+# fullscreen there -- see KioskWindow.gd.
+func _unhandled_key_input(event):
+	KioskWindow.handle_fullscreen_toggle(get_window(), event)
+
 func load_layout(index: int):
 	current_layout_index = index
 	game_ended = false
