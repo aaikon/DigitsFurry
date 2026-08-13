@@ -80,8 +80,5 @@ func attach_to(slingshot) :
 	state = STATE_TRANSFERED
 	
 func _input_event(viewport, event, shape_idx):
-	# TEMP DEBUG -- remove once touch click behavior is diagnosed.
-	if event is InputEventMouseButton:
-		print("[Bird] _input_event: ", event, " is_action_pressed(touch)=", event.is_action_pressed("touch"), " state=", state)
 	if event.is_action_pressed("touch") and state == STATE_ATTACHED:
 		state = STATE_DRAGGED
