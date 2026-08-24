@@ -9,6 +9,10 @@ func _ready():
 	$Panel/VBox/Layout1Button.pressed.connect(func(): level.load_layout(0))
 	$Panel/VBox/Layout2Button.pressed.connect(func(): level.load_layout(1))
 	$Panel/VBox/Layout3Button.pressed.connect(func(): level.load_layout(2))
+	$Panel/VBox/Layout4Button.pressed.connect(func(): level.load_layout(3))
+	$Panel/VBox/Layout5Button.pressed.connect(func(): level.load_layout(4))
+	$Panel/VBox/JumpscareToggle.button_pressed = Jumpscare.enabled
+	$Panel/VBox/JumpscareToggle.toggled.connect(func(pressed): Jumpscare.enabled = pressed)
 	level.score_changed.connect(_on_score_changed)
 	level.max_score_changed.connect(_on_max_score_changed)
 	_on_score_changed(level.score)

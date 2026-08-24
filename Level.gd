@@ -4,6 +4,8 @@ const LAYOUTS = [
 	preload("res://levels/Layout1.tscn"),
 	preload("res://levels/Layout2.tscn"),
 	preload("res://levels/Layout3.tscn"),
+	preload("res://levels/Layout4.tscn"),
+	preload("res://levels/Layout5.tscn"),
 ]
 const BIRDS_SCENE = preload("res://levels/Birds.tscn")
 

@@ -13,3 +13,11 @@ data_*/
 
 # Local tooling
 .claude/
+
+# Jumpscare drop-in assets: not distributed with the repo, see
+# assets/jumpscare/README.txt -- add your own locally.
+assets/jumpscare/frames/
+assets/jumpscare/*.mp4
+assets/jumpscare/*.webm
+assets/jumpscare/*.ogv
+assets/jumpscare/*.ogv.uid

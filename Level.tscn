@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://de4e33gx6l4ko"]
 
 [ext_resource type="Script" uid="uid://cy4b4vy66vv2e" path="res://Level.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://bsrmy34p18arc" path="res://assets/gameplay/background_1.jpg" id="2_3ywx5"]
+[ext_resource type="Texture2D" uid="uid://bgawnd0ccfy37" path="res://assets/gameplay/IMG_3889.jpg" id="2_3ywx5"]
 [ext_resource type="Script" uid="uid://bxo3yh2f7eiy1" path="res://scenes/Camera.gd" id="3"]
 [ext_resource type="PackedScene" path="res://EndLevel.tscn" id="4"]
 [ext_resource type="PackedScene" path="res://scenes/Slingshot.tscn" id="5"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" path="res://scenes/GUI.tscn" id="10"]
 [ext_resource type="Script" uid="uid://b052m5snhffea" path="res://scenes/AdminPanel.gd" id="11"]
 [ext_resource type="Theme" uid="uid://bw1pc7vxjyq8b" path="res://default_theme.tres" id="12"]
-[ext_resource type="Script" path="res://scenes/StructuresWindow.gd" id="13"]
+[ext_resource type="Script" uid="uid://c20i7ulbngsls" path="res://scenes/StructuresWindow.gd" id="13"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(280, 1440)
@@ -19,7 +19,8 @@ script = ExtResource("1")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=493803031]
 z_index = -10
-position = Vector2(1280, 720)
+position = Vector2(465.99994, 796)
+scale = Vector2(0.25752315, 0.25752318)
 texture = ExtResource("2_3ywx5")
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=1884506177]
@@ -132,7 +133,26 @@ text = "2. Tower"
 [node name="Layout3Button" type="Button" parent="AdminWindow/Panel/VBox" unique_id=1667985305]
 custom_minimum_size = Vector2(0, 44)
 layout_mode = 2
-text = "3. Twin Nests"
+text = "3. BPT"
+
+[node name="Layout4Button" type="Button" parent="AdminWindow/Panel/VBox" unique_id=-891234561]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+text = "4. Layout 4"
+
+[node name="Layout5Button" type="Button" parent="AdminWindow/Panel/VBox" unique_id=-891234562]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+text = "5. Layout 5"
+
+[node name="HSeparator3" type="HSeparator" parent="AdminWindow/Panel/VBox" unique_id=-473062840]
+layout_mode = 2
+
+[node name="JumpscareToggle" type="CheckButton" parent="AdminWindow/Panel/VBox" unique_id=-473062839]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+button_pressed = true
+text = "hihihaha"
 
 [node name="Slingshot" parent="." unique_id=2043783961 instance=ExtResource("5")]
 position = Vector2(606.729, 1150.52)
