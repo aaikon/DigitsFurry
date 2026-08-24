@@ -41,13 +41,14 @@ func _on_Damageable_body_entered( body ):
 	# get_damage(self.processed_velocity.length() * 0.05)
 	pass
 
-func get_damage(damage) : 
+func get_damage(damage) :
 	damage = round(damage)
 	if damage > 0 :
 		print("damage : ", damage)
 		self.health -= damage
 		update_animation()
-		if self.health <= 0: 
+		Sfx.play_impact("soft" if is_in_group("Ennemy") or is_in_group("Bird") else "wood")
+		if self.health <= 0:
 			explode()
 			
 func update_animation() :
@@ -60,6 +61,12 @@ func explode(emit_signals = true):
 	var explosion = explosion_scene.instantiate()
 	explosion.position = position
 	get_parent().add_child(explosion)
-	if emit_signals: 
+	if is_in_group("Ennemy"):
+		Sfx.play_destroy("soft", 1.6)
+	elif is_in_group("Bird"):
+		Sfx.play_destroy("soft", 1.0)
+	else:
+		Sfx.play_destroy("wood")
+	if emit_signals:
 		emit_signal("exploded", self)
 	queue_free()

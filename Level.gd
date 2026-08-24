@@ -26,6 +26,17 @@ func _ready():
 	get_viewport().physics_object_picking = true
 	load_layout(0)
 
+	# Input.mouse_mode is process-global, not per-window, so we can't just
+	# hide it in project settings without also hiding it over AdminWindow
+	# (operator needs the pointer for its buttons). Toggle it on focus
+	# instead -- hidden while this touch window is active, restored when
+	# focus moves to AdminWindow.
+	var window = get_window()
+	window.focus_entered.connect(func(): Input.mouse_mode = Input.MOUSE_MODE_HIDDEN)
+	window.focus_exited.connect(func(): Input.mouse_mode = Input.MOUSE_MODE_VISIBLE)
+	if window.has_focus():
+		Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+
 # Kiosk deployment: this window (slingshot/touch), StructuresWindow (pigs),
 # and AdminWindow (operator controls) each live on their own monitor. Drag
 # each window to its physical monitor, then press F11 on it to lock it

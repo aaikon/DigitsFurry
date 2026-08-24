@@ -23,6 +23,7 @@ func display(score):
 	animated_score = 0
 	set_process(true)
 	$Background.show()
+	Sfx.play_level_win()
 	if score_tween:
 		score_tween.kill()
 	score_tween = create_tween()

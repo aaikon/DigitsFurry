@@ -66,6 +66,7 @@ func _integrate_forces(s):
 			if diff_pos.length() * delta < impulse.length() :
 				state = STATE_LAUNCHED
 				slingshot.detach_bird()
+				Sfx.play_launch()
 				emit_signal("launched", self)
 			else : 
 				lv = diff_pos.normalized() * impulse.length()
@@ -82,3 +83,4 @@ func attach_to(slingshot) :
 func _input_event(viewport, event, shape_idx):
 	if event.is_action_pressed("touch") and state == STATE_ATTACHED:
 		state = STATE_DRAGGED
+		Sfx.play_stretch()

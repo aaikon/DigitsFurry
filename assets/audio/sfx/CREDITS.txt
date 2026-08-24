@@ -1,0 +1,16 @@
+Sound effects sourced from Kenney (www.kenney.nl), CC0 1.0 Universal (public domain).
+Attribution not required by the license; included here for provenance.
+
+  stretch.ogg      <- Kenney RPG Audio        / creak1.ogg
+  launch.ogg       <- Kenney Interface Sounds / pluck_002.ogg
+  impact_wood.ogg  <- Kenney Impact Sounds    / impactWood_medium_000.ogg
+  destroy_wood.ogg <- Kenney Impact Sounds    / impactWood_heavy_000.ogg
+  impact_soft.ogg  <- Kenney Impact Sounds    / impactSoft_medium_000.ogg
+  destroy_soft.ogg <- Kenney Impact Sounds    / impactSoft_heavy_000.ogg
+  level_win.ogg    <- Kenney Music Jingles    / jingles_PIZZI16.ogg
+  level_lose.ogg   <- Kenney Music Jingles    / jingles_PIZZI00.ogg
+
+https://kenney.nl/assets/impact-sounds
+https://kenney.nl/assets/interface-sounds
+https://kenney.nl/assets/rpg-audio
+https://kenney.nl/assets/music-jingles
