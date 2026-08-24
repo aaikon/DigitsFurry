@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cy4b4vy66vv2e" path="res://Level.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://bgawnd0ccfy37" path="res://assets/gameplay/IMG_3889.jpg" id="2_3ywx5"]
 [ext_resource type="Script" uid="uid://bxo3yh2f7eiy1" path="res://scenes/Camera.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://cfndm2jfpt5o6" path="res://assets/gameplay/images.jpg" id="3_ofirr"]
 [ext_resource type="PackedScene" path="res://EndLevel.tscn" id="4"]
 [ext_resource type="PackedScene" path="res://scenes/Slingshot.tscn" id="5"]
 [ext_resource type="PackedScene" path="res://scenes/Gameover.tscn" id="9"]
@@ -22,6 +23,11 @@ z_index = -10
 position = Vector2(465.99994, 796)
 scale = Vector2(0.25752315, 0.25752318)
 texture = ExtResource("2_3ywx5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=964784208]
+position = Vector2(530.5001, 1545.2074)
+scale = Vector2(8.748879, 2.582235)
+texture = ExtResource("3_ofirr")
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=1884506177]
 position = Vector2(1330, 1350)

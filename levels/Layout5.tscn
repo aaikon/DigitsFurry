@@ -1,7 +1,32 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://bldmtenpodegb"]
 
-[node name="Layout5" type="Node2D"]
+[ext_resource type="PackedScene" path="res://scenes/ennemies/LittleGreen.tscn" id="1_k62cc"]
+[ext_resource type="PackedScene" path="res://scenes/blocks/LongWood.tscn" id="2_570lg"]
 
-[node name="Ennemies" type="Node2D" parent="."]
+[node name="Layout5" type="Node2D" unique_id=933185684]
 
-[node name="Blocks" type="Node2D" parent="."]
+[node name="Ennemies" type="Node2D" parent="." unique_id=530821555]
+
+[node name="PigMid" parent="Ennemies" unique_id=1309408977 instance=ExtResource("1_k62cc")]
+position = Vector2(1978, 1192)
+health = 2
+destroy_points = 1000
+
+[node name="Blocks" type="Node2D" parent="." unique_id=891949486]
+
+[node name="MidLegA" parent="Blocks" unique_id=173361072 instance=ExtResource("2_570lg")]
+position = Vector2(1889, 1148)
+rotation = -1.7847818
+freeze = true
+destroy_points = 0
+
+[node name="MidLegB" parent="Blocks" unique_id=969536915 instance=ExtResource("2_570lg")]
+position = Vector2(2068.9998, 1146)
+rotation = -1.3537062
+freeze = true
+destroy_points = 0
+
+[node name="MidRoof" parent="Blocks" unique_id=475905408 instance=ExtResource("2_570lg")]
+position = Vector2(1979, 1239)
+freeze = true
+destroy_points = 0
