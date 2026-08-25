@@ -45,6 +45,7 @@ func _ready():
 # fullscreen there -- see KioskWindow.gd.
 func _unhandled_key_input(event):
 	KioskWindow.handle_fullscreen_toggle(get_window(), event)
+	$AdminWindow.handle_shortcuts(event)
 
 func load_layout(index: int):
 	current_layout_index = index

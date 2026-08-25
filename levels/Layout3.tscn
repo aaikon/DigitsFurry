@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://duxmrydgjj6fm"]
 
 [ext_resource type="PackedScene" path="res://scenes/ennemies/LittleGreen.tscn" id="1"]
-[ext_resource type="PackedScene" path="res://scenes/blocks/LongWood.tscn" id="2"]
+[ext_resource type="Script" uid="uid://dpm75sxdrol1b" path="res://scenes/Damageable.gd" id="3_8xoqh"]
+[ext_resource type="PackedScene" uid="uid://d3aqv84o3telq" path="res://scenes/blocks/StoneBeam.tscn" id="3_ckoqf"]
 
 [node name="Layout3" type="Node2D" unique_id=437969184]
 
@@ -24,53 +25,50 @@ destroy_points = 1000
 
 [node name="Blocks" type="Node2D" parent="." unique_id=1331717469]
 
-[node name="MidLegA3" parent="Blocks" unique_id=83396578 instance=ExtResource("2")]
-position = Vector2(2301, 1148)
-rotation = -1.7847818
-freeze = true
-destroy_points = 0
-
-[node name="MidLegB3" parent="Blocks" unique_id=1197690941 instance=ExtResource("2")]
-position = Vector2(2480.9998, 1146)
-rotation = -1.3537062
-freeze = true
-destroy_points = 0
-
-[node name="MidRoof3" parent="Blocks" unique_id=1641482286 instance=ExtResource("2")]
-position = Vector2(2391, 1239)
-freeze = true
-destroy_points = 0
-
-[node name="MidLegA" parent="Blocks" unique_id=2058717673 instance=ExtResource("2")]
-position = Vector2(1889, 1148)
-rotation = -1.7847818
-freeze = true
-destroy_points = 0
-
-[node name="MidLegB" parent="Blocks" unique_id=2022569449 instance=ExtResource("2")]
-position = Vector2(2068.9998, 1146)
-rotation = -1.3537062
-freeze = true
-destroy_points = 0
-
-[node name="MidRoof" parent="Blocks" unique_id=894670855 instance=ExtResource("2")]
+[node name="StoneBeam" parent="Blocks" unique_id=748707770 instance=ExtResource("3_ckoqf")]
 position = Vector2(1979, 1239)
-freeze = true
-destroy_points = 0
+script = ExtResource("3_8xoqh")
 
-[node name="MidLegA2" parent="Blocks" unique_id=582863955 instance=ExtResource("2")]
-position = Vector2(1436, 1148)
-rotation = -1.7847818
-freeze = true
-destroy_points = 0
+[node name="StoneBeam2" parent="Blocks" unique_id=572644356 instance=ExtResource("3_ckoqf")]
+position = Vector2(2069, 1148)
+rotation = -1.3629026
+script = ExtResource("3_8xoqh")
 
-[node name="MidLegB2" parent="Blocks" unique_id=682487989 instance=ExtResource("2")]
-position = Vector2(1615.9998, 1146)
-rotation = -1.3537062
-freeze = true
-destroy_points = 0
+[node name="StoneBeam3" parent="Blocks" unique_id=816727946 instance=ExtResource("3_ckoqf")]
+position = Vector2(1888.9999, 1148.9999)
+rotation = -1.802264
+script = ExtResource("3_8xoqh")
 
-[node name="MidRoof2" parent="Blocks" unique_id=962912858 instance=ExtResource("2")]
-position = Vector2(1526, 1239)
-freeze = true
-destroy_points = 0
+[node name="StoneBeam4" parent="Blocks" unique_id=45789220 instance=ExtResource("3_ckoqf")]
+position = Vector2(1526.0001, 1239)
+script = ExtResource("3_8xoqh")
+
+[node name="StoneBeam5" parent="Blocks" unique_id=293841388 instance=ExtResource("3_ckoqf")]
+position = Vector2(1616, 1148)
+rotation = -1.3629026
+script = ExtResource("3_8xoqh")
+
+[node name="StoneBeam6" parent="Blocks" unique_id=231337453 instance=ExtResource("3_ckoqf")]
+position = Vector2(1436, 1148.9999)
+rotation = -1.802264
+script = ExtResource("3_8xoqh")
+
+[node name="StoneBeam7" parent="Blocks" unique_id=374182642 instance=ExtResource("3_ckoqf")]
+position = Vector2(2391, 1239)
+script = ExtResource("3_8xoqh")
+
+[node name="StoneBeam8" parent="Blocks" unique_id=27256386 instance=ExtResource("3_ckoqf")]
+position = Vector2(2481.0002, 1148)
+rotation = -1.3629026
+script = ExtResource("3_8xoqh")
+
+[node name="StoneBeam9" parent="Blocks" unique_id=2133484437 instance=ExtResource("3_ckoqf")]
+position = Vector2(2301, 1148.9999)
+rotation = -1.802264
+script = ExtResource("3_8xoqh")
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=1820537257]
+position = Vector2(1330, 1350)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground" unique_id=2110292517]
+polygon = PackedVector2Array(-1330, -100, 1230, -100, 1230, 90, -1330, 90)

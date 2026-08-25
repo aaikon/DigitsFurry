@@ -1,34 +1,35 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene format=3 uid="uid://cv2wv6j8jjvbn"]
 
-[ext_resource type="Script" path="res://scenes/Slingshot.gd" id="1"]
+[ext_resource type="Script" uid="uid://ccd23wn8w04fl" path="res://scenes/Slingshot.gd" id="1"]
 [ext_resource type="PackedScene" path="res://scenes/Spot.tscn" id="2"]
-[ext_resource type="Texture2D" path="res://assets/gameplay/slingshot.png" id="3"]
-[ext_resource type="Texture2D" path="res://assets/gameplay/slingshot_2.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://bgd318ya3ap8i" path="res://assets/gameplay/slingshot.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://c6fgly0ihonbx" path="res://assets/gameplay/slingshot_2.png" id="4"]
 [ext_resource type="PackedScene" path="res://scenes/Elastic.tscn" id="5"]
 
-[node name="Slingshot" type="Node2D"]
+[node name="Slingshot" type="Node2D" unique_id=1932216278]
 script = ExtResource("1")
 spot_scene = ExtResource("2")
 
-[node name="SlingshotBack" type="Sprite2D" parent="."]
-position = Vector2(-9.8618, -0.508491)
+[node name="SlingshotBack" type="Sprite2D" parent="." unique_id=137705702]
 z_index = -1
+position = Vector2(-9.8618, -0.508491)
 texture = ExtResource("3")
 
-[node name="SlingshotFront" type="Sprite2D" parent="."]
-position = Vector2(-21.9206, -48.824)
+[node name="SlingshotFront" type="Sprite2D" parent="." unique_id=629711192]
 z_index = 1
+position = Vector2(-21.9206, -48.824)
 texture = ExtResource("4")
 
-[node name="LaunchPoint" type="Marker2D" parent="."]
+[node name="LaunchPoint" type="Marker2D" parent="." unique_id=317808794]
 position = Vector2(-2.20529, -72.0394)
 
-[node name="ElasticBack" parent="." instance=ExtResource("5")]
-position = Vector2(13.2038, -75.2618)
+[node name="ElasticBack" parent="." unique_id=1125024046 instance=ExtResource("5")]
 z_index = -1
+position = Vector2(13.2038, -75.2618)
 
-[node name="ElasticFront" parent="." instance=ExtResource("5")]
+[node name="ElasticFront" parent="." unique_id=362222520 instance=ExtResource("5")]
 position = Vector2(-31.6892, -62.4981)
 
-[node name="Trajectory" type="Node2D" parent="."]
+[node name="Trajectory" type="Node2D" parent="." unique_id=1999623680]
+visible = false
 position = Vector2(-2.20529, -72.0394)

@@ -2,71 +2,75 @@
 
 [ext_resource type="Texture2D" uid="uid://wbjkfxwdwy15" path="res://assets/gameplay/dmbxdrp-2a4e74d5-d283-4beb-b9f7-3a7bcfb54083.jpg" id="1_0fayd"]
 [ext_resource type="PackedScene" path="res://scenes/ennemies/LittleGreen.tscn" id="1_g04oi"]
-[ext_resource type="PackedScene" path="res://scenes/blocks/LongWood.tscn" id="2_0fayd"]
-[ext_resource type="PackedScene" uid="uid://el16gxi03odt" path="res://scenes/blocks/Block.tscn" id="4_vrtft"]
+[ext_resource type="PackedScene" uid="uid://dihadmge0k8al" path="res://scenes/ennemies/PurpleHippo.tscn" id="3_pj80r"]
+[ext_resource type="PackedScene" uid="uid://d3aqv84o3telq" path="res://scenes/blocks/StoneBeam.tscn" id="3_vrtft"]
+[ext_resource type="PackedScene" path="res://scenes/blocks/StoneBlock.tscn" id="4_pj80r"]
+[ext_resource type="Script" uid="uid://dpm75sxdrol1b" path="res://scenes/Damageable.gd" id="5_n65td"]
 
 [node name="Layout4" type="Node2D" unique_id=779160444]
 
 [node name="Dmbxdrp2a4e74d5D2834BebB9f73a7Bcfb54083" type="Sprite2D" parent="." unique_id=163002209]
-position = Vector2(1963.0001, 611)
-scale = Vector2(3.6304848, 3.630485)
+visible = false
+position = Vector2(1912, 831)
+scale = Vector2(2.2632794, 2.2632794)
 texture = ExtResource("1_0fayd")
 
 [node name="Ennemies" type="Node2D" parent="." unique_id=614932198]
 
 [node name="PigMid" parent="Ennemies" unique_id=2043895981 instance=ExtResource("1_g04oi")]
-position = Vector2(1537, 816)
+position = Vector2(1547, 969)
 health = 2
-destroy_points = 1000
+destroy_points = 2000
 
 [node name="PigMid2" parent="Ennemies" unique_id=531923071 instance=ExtResource("1_g04oi")]
-position = Vector2(2295, 438)
+position = Vector2(2191, 878)
 health = 2
-destroy_points = 1000
+destroy_points = 2000
+
+[node name="PurpleHippo" parent="Ennemies" unique_id=225665316 instance=ExtResource("3_pj80r")]
+position = Vector2(2265, 1217)
 
 [node name="Blocks" type="Node2D" parent="." unique_id=527542552]
 
-[node name="MidLegB2" parent="Blocks" unique_id=946626897 instance=ExtResource("2_0fayd")]
-position = Vector2(1605.0002, 787)
-rotation = -1.3537062
-freeze = true
-destroy_points = 0
+[node name="StoneBeam" parent="Blocks" unique_id=45789220 instance=ExtResource("3_vrtft")]
+position = Vector2(1695, 865)
+rotation = 0.26731685
+script = ExtResource("5_n65td")
 
-[node name="MidLegB3" parent="Blocks" unique_id=967960698 instance=ExtResource("2_0fayd")]
-position = Vector2(1741, 823)
-rotation = -1.3537062
-freeze = true
-destroy_points = 0
+[node name="StoneBeam2" parent="Blocks" unique_id=886423852 instance=ExtResource("3_vrtft")]
+position = Vector2(1603.9999, 935.99994)
+rotation = -1.3469368
+script = ExtResource("5_n65td")
 
-[node name="MidLegB4" parent="Blocks" unique_id=563927792 instance=ExtResource("2_0fayd")]
-position = Vector2(1694.9999, 716)
-rotation = -2.877367
-freeze = true
-destroy_points = 0
+[node name="StoneBeam3" parent="Blocks" unique_id=800429073 instance=ExtResource("3_vrtft")]
+position = Vector2(1741, 972.00006)
+rotation = -1.3469368
+script = ExtResource("5_n65td")
 
-[node name="Block" parent="Blocks" unique_id=222880077 instance=ExtResource("4_vrtft")]
-position = Vector2(1547.9999, 897.9999)
-rotation = 0.23137666
-freeze = true
+[node name="StoneBlock" parent="Blocks" unique_id=79905492 instance=ExtResource("4_pj80r")]
+position = Vector2(1548, 1046)
+rotation = 0.24826449
 
-[node name="Block2" parent="Blocks" unique_id=1276357251 instance=ExtResource("4_vrtft")]
-position = Vector2(1686, 935.9999)
-rotation = 0.23137666
+[node name="StoneBlock2" parent="Blocks" unique_id=1818143736 instance=ExtResource("4_pj80r")]
+position = Vector2(1684, 1085)
+rotation = 0.24826449
 
-[node name="MidLegB5" parent="Blocks" unique_id=1866737612 instance=ExtResource("2_0fayd")]
-position = Vector2(2238, 586)
-rotation = -1.6233041
-freeze = true
-destroy_points = 0
+[node name="StoneBlock3" parent="Blocks" unique_id=1763663536 instance=ExtResource("4_pj80r")]
+position = Vector2(2205.0002, 954)
+rotation = 0.13880348
 
-[node name="MidLegB6" parent="Blocks" unique_id=290009109 instance=ExtResource("2_0fayd")]
-position = Vector2(2300, 493.00006)
-rotation = -3.1524398
-freeze = true
-destroy_points = 0
+[node name="StoneBeam4" parent="Blocks" unique_id=647162543 instance=ExtResource("3_vrtft")]
+position = Vector2(2301, 745)
+rotation = -0.017122239
+script = ExtResource("5_n65td")
 
-[node name="Block3" parent="Blocks" unique_id=79942660 instance=ExtResource("4_vrtft")]
-position = Vector2(2214.9998, 708.99994)
-rotation = -1.6523646
-scale = Vector2(0.99999994, 0.99999994)
-freeze = true
+[node name="StoneBeam5" parent="Blocks" unique_id=232585985 instance=ExtResource("3_vrtft")]
+position = Vector2(2238, 837)
+rotation = 1.524227
+script = ExtResource("5_n65td")
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=1167970089]
+position = Vector2(1330, 1350)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground" unique_id=331568929]
+polygon = PackedVector2Array(-1330, -100, 1230, -100, 1230, 90, -1330, 90)

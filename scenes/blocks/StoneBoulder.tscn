@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c5jvghucjsv6v"]
+
+[ext_resource type="PackedScene" path="res://scenes/Damageable.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://b7wmbs3fcnqjq" path="res://assets/gameplay/blocks.png" id="2"]
+[ext_resource type="Script" uid="uid://bcuti1p4vdru" path="res://scenes/blocks/Unbreakable.gd" id="3"]
+
+[sub_resource type="CircleShape2D" id="1"]
+radius = 20.0
+
+[node name="StoneBoulder" unique_id=221659186 instance=ExtResource("1")]
+freeze = true
+script = ExtResource("3")
+destroy_points = 0
+
+[node name="Texture2D" parent="." index="0"]
+position = Vector2(-4.7683716e-07, -4.7683716e-07)
+scale = Vector2(0.53846157, 0.53846157)
+texture = ExtResource("2")
+region_rect = Rect2(661, 150, 78, 82)
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("1")

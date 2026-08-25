@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dihadmge0k8al"]
+
+[ext_resource type="PackedScene" path="res://scenes/ennemies/Ennemy.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://dddw5eptvpdjt" path="res://assets/gameplay/askotti-removebg-preview.png" id="2"]
+[ext_resource type="Script" uid="uid://o8aoygt40ujv" path="res://scenes/ennemies/Halo.gd" id="3"]
+
+[node name="PurpleHippo" unique_id=866462449 instance=ExtResource("1")]
+health = 2
+destroy_points = 5000
+
+[node name="Texture2D" parent="." index="0"]
+position = Vector2(0, 0)
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("2")
+region_enabled = false
+
+[node name="Halo" type="Node2D" parent="." index="3" unique_id=1689111080]
+z_index = -1
+script = ExtResource("3")

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://d3aqv84o3telq"]
+
+[ext_resource type="PackedScene" path="res://scenes/Damageable.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://b7wmbs3fcnqjq" path="res://assets/gameplay/blocks.png" id="2"]
+[ext_resource type="Script" path="res://scenes/blocks/Unbreakable.gd" id="3"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(160.532, 20)
+
+[node name="StoneBeam" unique_id=45789220 instance=ExtResource("1")]
+script = ExtResource("3")
+freeze = true
+destroy_points = 0
+
+[node name="Texture2D" parent="." index="0"]
+position = Vector2(0, 0)
+texture = ExtResource("2")
+region_rect = Rect2(631, 560, 161.5, 20)
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("1")

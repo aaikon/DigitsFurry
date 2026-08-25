@@ -26,3 +26,26 @@ func _on_max_score_changed(new_max):
 
 func _unhandled_key_input(event):
 	KioskWindow.handle_fullscreen_toggle(self, event)
+	handle_shortcuts(event)
+
+## Callable from any kiosk window (not just this one), so operator shortcuts
+## work regardless of which window currently has focus -- see Level.gd and
+## StructuresWindow.gd.
+func handle_shortcuts(event: InputEvent) -> void:
+	if not (event is InputEventKey and event.pressed and not event.echo):
+		return
+	match event.keycode:
+		KEY_R:
+			$Panel/VBox/ResetButton.pressed.emit()
+		KEY_1:
+			$Panel/VBox/Layout1Button.pressed.emit()
+		KEY_2:
+			$Panel/VBox/Layout2Button.pressed.emit()
+		KEY_3:
+			$Panel/VBox/Layout3Button.pressed.emit()
+		KEY_4:
+			$Panel/VBox/Layout4Button.pressed.emit()
+		KEY_5:
+			$Panel/VBox/Layout5Button.pressed.emit()
+		KEY_J:
+			$Panel/VBox/JumpscareToggle.button_pressed = not $Panel/VBox/JumpscareToggle.button_pressed

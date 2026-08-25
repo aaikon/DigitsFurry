@@ -1,0 +1,21 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/Damageable.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://b7wmbs3fcnqjq" path="res://assets/gameplay/blocks.png" id="2"]
+[ext_resource type="Script" path="res://scenes/blocks/Unbreakable.gd" id="3"]
+
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(79.75, 80.5)
+
+[node name="StoneBlock" instance=ExtResource("1")]
+script = ExtResource("3")
+freeze = true
+destroy_points = 0
+
+[node name="Texture2D" parent="." index="0"]
+position = Vector2(-0.342499, -0.183104)
+texture = ExtResource("2")
+region_rect = Rect2(0.25, -0.38175, 79.75, 80.5)
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("2")
