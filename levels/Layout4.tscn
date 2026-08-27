@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" path="res://scenes/blocks/StoneBlock.tscn" id="4_pj80r"]
 [ext_resource type="Script" uid="uid://dpm75sxdrol1b" path="res://scenes/Damageable.gd" id="5_n65td"]
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_n65td"]
+
 [node name="Layout4" type="Node2D" unique_id=779160444]
 
 [node name="Dmbxdrp2a4e74d5D2834BebB9f73a7Bcfb54083" type="Sprite2D" parent="." unique_id=163002209]
@@ -20,12 +22,12 @@ texture = ExtResource("1_0fayd")
 [node name="PigMid" parent="Ennemies" unique_id=2043895981 instance=ExtResource("1_g04oi")]
 position = Vector2(1547, 969)
 health = 2
-destroy_points = 2000
+destroy_points = 1000
 
 [node name="PigMid2" parent="Ennemies" unique_id=531923071 instance=ExtResource("1_g04oi")]
 position = Vector2(2191, 878)
 health = 2
-destroy_points = 2000
+destroy_points = 1000
 
 [node name="PurpleHippo" parent="Ennemies" unique_id=225665316 instance=ExtResource("3_pj80r")]
 position = Vector2(2265, 1217)
@@ -74,3 +76,8 @@ position = Vector2(1330, 1350)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground" unique_id=331568929]
 polygon = PackedVector2Array(-1330, -100, 1230, -100, 1230, 90, -1330, 90)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=631229249]
+position = Vector2(1279.5, 1618.5)
+scale = Vector2(2559.0002, 737)
+texture = SubResource("PlaceholderTexture2D_n65td")

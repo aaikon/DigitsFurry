@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://de4e33gx6l4ko"]
 
 [ext_resource type="Script" uid="uid://cy4b4vy66vv2e" path="res://Level.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://bgawnd0ccfy37" path="res://assets/gameplay/IMG_3889.jpg" id="2_3ywx5"]
 [ext_resource type="Script" uid="uid://bxo3yh2f7eiy1" path="res://scenes/Camera.gd" id="3"]
 [ext_resource type="Texture2D" uid="uid://cfndm2jfpt5o6" path="res://assets/gameplay/images.jpg" id="3_ofirr"]
 [ext_resource type="PackedScene" path="res://EndLevel.tscn" id="4"]
@@ -23,7 +22,6 @@ visible = false
 z_index = -10
 position = Vector2(465.99994, 796)
 scale = Vector2(0.25752315, 0.25752318)
-texture = ExtResource("2_3ywx5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=964784208]
 visible = false
@@ -51,8 +49,35 @@ limit_top = 0
 limit_right = 2560
 limit_bottom = 1440
 script = ExtResource("3")
-region_position = Vector2(0, 850)
-region_size = Vector2(850, 450)
+region_position = Vector2(141.6667, 925)
+region_size = Vector2(566.6667, 300)
+
+[node name="InstructionsOverlay" type="CanvasLayer" parent="." unique_id=963104005]
+visible = false
+
+[node name="Background" type="ColorRect" parent="InstructionsOverlay" unique_id=1365580151]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.8)
+
+[node name="Label" type="RichTextLabel" parent="InstructionsOverlay/Background" unique_id=1889947529]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 20
+bbcode_enabled = true
+text = "[b]How to Play[/b]
+Drag the bird back and release to launch it at the enemies and structures.
+
+[b]Bonus: Reaction Minigame[/b]
+A spinning gold digit logo flies across the sky. Click it fast for +1000 points!"
+fit_content = true
 
 [node name="StructuresWindow" type="Window" parent="." unique_id=921313224]
 oversampling_override = 1.0
@@ -71,6 +96,35 @@ region_position = Vector2(1700, 950)
 region_size = Vector2(560, 350)
 
 [node name="GUI" parent="StructuresWindow" unique_id=359945209 instance=ExtResource("10")]
+
+[node name="InstructionsOverlay" type="CanvasLayer" parent="StructuresWindow" unique_id=1462390945]
+visible = false
+
+[node name="Background" type="ColorRect" parent="StructuresWindow/InstructionsOverlay" unique_id=498322363]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.8)
+
+[node name="Label" type="RichTextLabel" parent="StructuresWindow/InstructionsOverlay/Background" unique_id=1492163761]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 20
+bbcode_enabled = true
+text = "[b]Block Types[/b]
+Wood: breakable, can be knocked around and destroyed.
+Stone: frozen in place, can't move or break.
+
+[b]Enemies[/b]
+Pig: +1000 points.
+Askotti: +5000 points!"
+fit_content = true
 
 [node name="AdminWindow" type="Window" parent="." unique_id=1757339248]
 oversampling_override = 1.0
@@ -109,11 +163,24 @@ horizontal_alignment = 1
 [node name="HSeparator" type="HSeparator" parent="AdminWindow/Panel/VBox" unique_id=2110819871]
 layout_mode = 2
 
-[node name="ResetButton" type="Button" parent="AdminWindow/Panel/VBox" unique_id=1266236707]
+[node name="ResetGameButton" type="Button" parent="AdminWindow/Panel/VBox" unique_id=1266236707]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 tooltip_text = "Shortcut: R"
-text = "Reset Level"
+text = "Reset Game"
+
+[node name="InstructionsToggle" type="CheckButton" parent="AdminWindow/Panel/VBox" unique_id=-583920174]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+tooltip_text = "Shortcut: I"
+text = "Show Instructions"
+
+[node name="JumpscareToggle" type="CheckButton" parent="AdminWindow/Panel/VBox" unique_id=-473062839]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+tooltip_text = "Shortcut: J"
+button_pressed = true
+text = "hihihaha"
 
 [node name="HSeparator2" type="HSeparator" parent="AdminWindow/Panel/VBox" unique_id=1932903970]
 layout_mode = 2
@@ -153,25 +220,10 @@ layout_mode = 2
 tooltip_text = "Shortcut: 5"
 text = "5. Layout 5"
 
-[node name="HSeparator3" type="HSeparator" parent="AdminWindow/Panel/VBox" unique_id=-473062840]
-layout_mode = 2
-
-[node name="JumpscareToggle" type="CheckButton" parent="AdminWindow/Panel/VBox" unique_id=-473062839]
-custom_minimum_size = Vector2(0, 44)
-layout_mode = 2
-tooltip_text = "Shortcut: J"
-button_pressed = true
-text = "hihihaha"
-
 [node name="Slingshot" parent="." unique_id=2043783961 instance=ExtResource("5")]
 position = Vector2(606.729, 1150.52)
 TRAJECTORY_VISIBILITY = false
 
 [node name="EndLevel" parent="." unique_id=40352077 instance=ExtResource("4")]
-score_levels = {
-1: 2000,
-2: 4000,
-3: 5500
-}
 
 [node name="Gameover" parent="." unique_id=300225839 instance=ExtResource("9")]

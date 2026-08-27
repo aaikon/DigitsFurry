@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://dpm75sxdrol1b" path="res://scenes/Damageable.gd" id="3_8xoqh"]
 [ext_resource type="PackedScene" uid="uid://d3aqv84o3telq" path="res://scenes/blocks/StoneBeam.tscn" id="3_ckoqf"]
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ckoqf"]
+
 [node name="Layout3" type="Node2D" unique_id=437969184]
 
 [node name="Ennemies" type="Node2D" parent="." unique_id=510800701]
@@ -72,3 +74,8 @@ position = Vector2(1330, 1350)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground" unique_id=2110292517]
 polygon = PackedVector2Array(-1330, -100, 1230, -100, 1230, 90, -1330, 90)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=533805163]
+position = Vector2(1279.5, 1618.5)
+scale = Vector2(2559.0002, 737)
+texture = SubResource("PlaceholderTexture2D_ckoqf")

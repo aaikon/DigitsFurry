@@ -6,18 +6,23 @@
 [ext_resource type="PackedScene" uid="uid://d3aqv84o3telq" path="res://scenes/blocks/StoneBeam.tscn" id="3_ln5aj"]
 [ext_resource type="Script" uid="uid://dpm75sxdrol1b" path="res://scenes/Damageable.gd" id="5_khpkt"]
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_khpkt"]
+
 [node name="Layout2" type="Node2D" unique_id=1917808015]
 
 [node name="Ennemies" type="Node2D" parent="." unique_id=992937896]
 
 [node name="LittleGreenBase2" parent="Ennemies" unique_id=1205117789 instance=ExtResource("1")]
 position = Vector2(2276, 1206)
+destroy_points = 1000
 
 [node name="LittleGreenTop2" parent="Ennemies" unique_id=826147065 instance=ExtResource("1")]
 position = Vector2(2276, 1028)
+destroy_points = 1000
 
 [node name="LittleGreenTop4" parent="Ennemies" unique_id=1860294340 instance=ExtResource("1")]
 position = Vector2(2274, 846)
+destroy_points = 1000
 
 [node name="PurpleHippo" parent="Ennemies" unique_id=866462449 instance=ExtResource("2_88odm")]
 position = Vector2(1984, 666)
@@ -27,48 +32,58 @@ position = Vector2(1984, 666)
 [node name="Base2" parent="Blocks" unique_id=1800908878 instance=ExtResource("2")]
 position = Vector2(2275.31, 1254.77)
 health = 50
+destroy_points = 0
 
 [node name="Tier1LegLeft2" parent="Blocks" unique_id=347551673 instance=ExtResource("2")]
 position = Vector2(2202, 1162.9999)
 rotation = -1.5737
 health = 50
+destroy_points = 0
 
 [node name="Tier1LegRight2" parent="Blocks" unique_id=223388380 instance=ExtResource("2")]
 position = Vector2(2345.47, 1164.89)
 rotation = -1.5737
 health = 50
+destroy_points = 0
 
 [node name="Tier1Platform2" parent="Blocks" unique_id=314045287 instance=ExtResource("2")]
 position = Vector2(2272.54, 1074.1)
 health = 50
+destroy_points = 0
 
 [node name="Tier2LegLeft2" parent="Blocks" unique_id=1673365434 instance=ExtResource("2")]
 position = Vector2(2202, 983)
 rotation = -1.5737
 health = 50
+destroy_points = 0
 
 [node name="Tier2LegRight2" parent="Blocks" unique_id=1085382692 instance=ExtResource("2")]
 position = Vector2(2341, 983)
 rotation = -1.5737
 health = 50
+destroy_points = 0
 
 [node name="TopRoof2" parent="Blocks" unique_id=1181186007 instance=ExtResource("2")]
 position = Vector2(2271, 895)
 health = 50
+destroy_points = 0
 
 [node name="Tier2LegLeft4" parent="Blocks" unique_id=602707076 instance=ExtResource("2")]
 position = Vector2(2201, 800)
 rotation = -1.5737
 health = 50
+destroy_points = 0
 
 [node name="Tier2LegRight4" parent="Blocks" unique_id=1197555251 instance=ExtResource("2")]
 position = Vector2(2340, 800)
 rotation = -1.5737
 health = 50
+destroy_points = 0
 
 [node name="TopRoof4" parent="Blocks" unique_id=1744767808 instance=ExtResource("2")]
 position = Vector2(2270, 712)
 health = 50
+destroy_points = 0
 
 [node name="StoneBeam" parent="Blocks" unique_id=45789220 instance=ExtResource("3_ln5aj")]
 position = Vector2(1992, 1251)
@@ -112,3 +127,8 @@ position = Vector2(1330, 1350)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground" unique_id=1394665088]
 polygon = PackedVector2Array(-1330, -100, 1230, -100, 1230, 90, -1330, 90)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=882715035]
+position = Vector2(1279.5, 1618.5)
+scale = Vector2(2559.0002, 737)
+texture = SubResource("PlaceholderTexture2D_khpkt")

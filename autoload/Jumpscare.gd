@@ -29,6 +29,13 @@ const PIPE_FALL_DURATION = 0.9
 const PITCH_MIN = 0.5
 const PITCH_MAX = 1.5
 
+## Flashbang -- whole screen flashes white then slowly fades, on the
+## Structures & Pigs window. Independent timer, same as the pipe sting.
+const FLASHBANG_MIN_INTERVAL = 45.0
+const FLASHBANG_MAX_INTERVAL = 60.0
+const FLASHBANG_HOLD_DURATION = 3.0 ## fully white for this long before fading
+const FLASHBANG_FADE_DURATION = 3.0
+
 var enabled := true
 var _frames: SpriteFrames = null
 var _scream: AudioStream = null
@@ -54,6 +61,8 @@ func _ready():
 		_schedule_next_pipe()
 	else:
 		push_warning("Jumpscare: no pipe sound at %s -- pipe scare disabled" % PIPE_PATH)
+
+	_schedule_next_flashbang()
 
 func _load_frames() -> SpriteFrames:
 	var dir = DirAccess.open(FRAMES_DIR)
@@ -88,6 +97,12 @@ func _trigger():
 	if enabled:
 		_show()
 	_schedule_next()
+
+## Manual one-off trigger (e.g. an operator shortcut) -- fires regardless of
+## the enabled toggle, but only if frames are actually loaded.
+func play_once() -> void:
+	if _frames:
+		_show()
 
 func _schedule_next_pipe():
 	get_tree().create_timer(randf_range(PIPE_MIN_INTERVAL, PIPE_MAX_INTERVAL)).timeout.connect(_trigger_pipe)
@@ -125,6 +140,37 @@ func _show_falling_pipe():
 		.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
 	tween.tween_property(sprite, "rotation", spin, PIPE_FALL_DURATION) \
 		.set_trans(Tween.TRANS_LINEAR)
+	tween.finished.connect(func():
+		if is_instance_valid(layer):
+			layer.queue_free()
+	)
+
+func _schedule_next_flashbang():
+	get_tree().create_timer(randf_range(FLASHBANG_MIN_INTERVAL, FLASHBANG_MAX_INTERVAL)).timeout.connect(_trigger_flashbang)
+
+func _trigger_flashbang():
+	if enabled:
+		_show_flashbang()
+	_schedule_next_flashbang()
+
+func _show_flashbang():
+	var structures_window = get_tree().root.get_node_or_null("Level/StructuresWindow")
+	if not structures_window:
+		return
+
+	var layer = CanvasLayer.new()
+	layer.layer = 100
+	structures_window.add_child(layer)
+
+	var flash = ColorRect.new()
+	flash.color = Color(1, 1, 1, 1)
+	flash.set_anchors_preset(Control.PRESET_FULL_RECT)
+	layer.add_child(flash)
+
+	var tween = create_tween()
+	tween.tween_interval(FLASHBANG_HOLD_DURATION)
+	tween.tween_property(flash, "color:a", 0.0, FLASHBANG_FADE_DURATION) \
+		.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	tween.finished.connect(func():
 		if is_instance_valid(layer):
 			layer.queue_free()

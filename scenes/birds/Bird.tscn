@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" path="res://scenes/Damageable.tscn" id="1"]
 [ext_resource type="Script" uid="uid://1hbqf2dh3m2u" path="res://scenes/birds/Bird.gd" id="2"]
-[ext_resource type="Texture2D" path="res://assets/gameplay/shadow_bird.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://bsvohvpyri2m0" path="res://assets/gameplay/shadow_bird.png" id="3"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "idle"
@@ -32,12 +32,12 @@ can_sleep = false
 script = ExtResource("2")
 TRANSFER_SPEED = 500
 health = 50
-survive_points = 2000
+destroy_points = 0
 
 [node name="Texture2D" parent="." index="0"]
+scale = Vector2(0.1544, 0.1544)
 texture = ExtResource("3")
 region_enabled = false
-scale = Vector2(0.1544, 0.1544)
 
 [node name="AttachPoint" type="Marker2D" parent="." index="2" unique_id=1870334183]
 position = Vector2(-35.6004, 8.29051)

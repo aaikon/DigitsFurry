@@ -1,12 +1,6 @@
-[gd_scene load_steps=11 format=3]
+[gd_scene load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://EndLevel.gd" id="1"]
-[ext_resource type="Texture2D" path="res://assets/GUI/slot_start_1.png" id="2"]
-[ext_resource type="Texture2D" path="res://assets/GUI/slot_start_2.png" id="3"]
-[ext_resource type="Texture2D" path="res://assets/GUI/slot_start_3.png" id="4"]
-[ext_resource type="Texture2D" path="res://assets/GUI/star_1.png" id="5"]
-[ext_resource type="Texture2D" path="res://assets/GUI/star_2.png" id="6"]
-[ext_resource type="Texture2D" path="res://assets/GUI/star_3.png" id="7"]
 [ext_resource type="FontFile" path="res://assets/GUI/RammettoOne-Regular.ttf" id="8"]
 
 [sub_resource type="FontFile" id="1"]
@@ -24,75 +18,6 @@ script = ExtResource("1")
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color(0, 0, 0, 0.705882)
-
-[node name="SlotStar1" type="TextureRect" parent="Background"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -226.788
-offset_top = -81.7288
-offset_right = -107.788
-offset_bottom = 48.2712
-texture = ExtResource("2")
-
-[node name="SlotStar2" type="TextureRect" parent="Background"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -78.5
-offset_top = -46.2966
-offset_right = 78.5
-offset_bottom = 91.7034
-texture = ExtResource("3")
-
-[node name="SlotStar3" type="TextureRect" parent="Background"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 101.508
-offset_top = -78.5339
-offset_right = 223.508
-offset_bottom = 47.4661
-texture = ExtResource("4")
-
-[node name="Star1" type="TextureRect" parent="Background"]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -300.051
-offset_top = -144.017
-offset_right = -99.0507
-offset_bottom = 57.9831
-texture = ExtResource("5")
-
-[node name="Star2" type="TextureRect" parent="Background"]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -111.5
-offset_top = -115.5
-offset_right = 111.5
-offset_bottom = 115.5
-texture = ExtResource("6")
-
-[node name="Star3" type="TextureRect" parent="Background"]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 94.7963
-offset_top = -146.102
-offset_right = 282.796
-offset_bottom = 52.8983
-texture = ExtResource("7")
 
 [node name="Label" type="Label" parent="Background"]
 anchor_top = 1.0

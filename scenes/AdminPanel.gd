@@ -5,7 +5,8 @@ extends Window
 
 func _ready():
 	var level = get_parent()
-	$Panel/VBox/ResetButton.pressed.connect(func(): level.load_layout(level.current_layout_index))
+	$Panel/VBox/ResetGameButton.pressed.connect(level.reset_game)
+	$Panel/VBox/InstructionsToggle.toggled.connect(level.set_instructions_visible)
 	$Panel/VBox/Layout1Button.pressed.connect(func(): level.load_layout(0))
 	$Panel/VBox/Layout2Button.pressed.connect(func(): level.load_layout(1))
 	$Panel/VBox/Layout3Button.pressed.connect(func(): level.load_layout(2))
@@ -36,7 +37,7 @@ func handle_shortcuts(event: InputEvent) -> void:
 		return
 	match event.keycode:
 		KEY_R:
-			$Panel/VBox/ResetButton.pressed.emit()
+			$Panel/VBox/ResetGameButton.pressed.emit()
 		KEY_1:
 			$Panel/VBox/Layout1Button.pressed.emit()
 		KEY_2:
@@ -49,3 +50,7 @@ func handle_shortcuts(event: InputEvent) -> void:
 			$Panel/VBox/Layout5Button.pressed.emit()
 		KEY_J:
 			$Panel/VBox/JumpscareToggle.button_pressed = not $Panel/VBox/JumpscareToggle.button_pressed
+		KEY_I:
+			$Panel/VBox/InstructionsToggle.button_pressed = not $Panel/VBox/InstructionsToggle.button_pressed
+		KEY_F:
+			Jumpscare.play_once()

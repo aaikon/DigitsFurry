@@ -1,22 +1,20 @@
 [gd_scene format=3 uid="uid://bldmtenpodegb"]
 
 [ext_resource type="PackedScene" path="res://scenes/ennemies/LittleGreen.tscn" id="1_k62cc"]
+[ext_resource type="PackedScene" uid="uid://dihadmge0k8al" path="res://scenes/ennemies/PurpleHippo.tscn" id="2_j2hk5"]
 [ext_resource type="PackedScene" uid="uid://d3aqv84o3telq" path="res://scenes/blocks/StoneBeam.tscn" id="2_k62cc"]
 [ext_resource type="PackedScene" uid="uid://c5jvghucjsv6v" path="res://scenes/blocks/StoneBoulder.tscn" id="3_570lg"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_j2hk5"]
 
 [node name="Layout5" type="Node2D" unique_id=933185684]
 
 [node name="Ennemies" type="Node2D" parent="." unique_id=530821555]
 
-[node name="PigMid" parent="Ennemies" unique_id=1309408977 instance=ExtResource("1_k62cc")]
-position = Vector2(2029, 1497)
-health = 2
-destroy_points = 2000
-
 [node name="PigMid4" parent="Ennemies" unique_id=1784432946 instance=ExtResource("1_k62cc")]
 position = Vector2(1846, 1497)
 health = 2
-destroy_points = 2000
+destroy_points = 1000
 
 [node name="PigMid5" parent="Ennemies" unique_id=841891406 instance=ExtResource("1_k62cc")]
 position = Vector2(2212, 1495)
@@ -27,6 +25,9 @@ destroy_points = 1000
 position = Vector2(1655, 1495)
 health = 2
 destroy_points = 1000
+
+[node name="PurpleHippo" parent="Ennemies" unique_id=866462449 instance=ExtResource("2_j2hk5")]
+position = Vector2(2029, 1497)
 
 [node name="Blocks" type="Node2D" parent="." unique_id=891949486]
 
@@ -151,3 +152,28 @@ position = Vector2(1330, 1350)
 position = Vector2(-701.72363, 0)
 scale = Vector2(0.66552734, 1)
 polygon = PackedVector2Array(-1330, -100, 1230, -100, 1230, 90, -1330, 90)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Ground" unique_id=373142130]
+position = Vector2(740, 301)
+scale = Vector2(0.66552734, 1)
+polygon = PackedVector2Array(-1330, -100, 1230, -100, 1230, 90, -1330, 90)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Ground" unique_id=852595033]
+position = Vector2(1962.2764, 0)
+scale = Vector2(0.66552734, 1)
+polygon = PackedVector2Array(-1330, -100, 1230, -100, 1230, 90, -1330, 90)
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1504189754]
+position = Vector2(1975.0001, 1798)
+scale = Vector2(1445.0001, 489.99997)
+texture = SubResource("PlaceholderTexture2D_j2hk5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1617985690]
+position = Vector2(722.49994, 1495)
+scale = Vector2(1445.0001, 489.99997)
+texture = SubResource("PlaceholderTexture2D_j2hk5")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1503825460]
+position = Vector2(3131.5002, 1495)
+scale = Vector2(1445.0001, 489.99997)
+texture = SubResource("PlaceholderTexture2D_j2hk5")

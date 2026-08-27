@@ -1,11 +1,5 @@
 extends CanvasLayer
 
-@export var score_levels: Dictionary = {
-	1: 5000,
-	2: 10000,
-	3: 15000
-}
-
 var animated_score
 var score_tween: Tween
 
@@ -14,9 +8,6 @@ func _ready():
 	set_process(false)
 
 func _process(delta):
-	for level in score_levels.keys():
-		if animated_score >= score_levels[level]:
-			get_node("Background/Star" + str(level)).show()
 	$Background/Label.text = str(int(animated_score))
 
 func display(score):
@@ -35,5 +26,3 @@ func reset():
 	set_process(false)
 	animated_score = 0
 	$Background.hide()
-	for level in score_levels.keys():
-		get_node("Background/Star" + str(level)).hide()

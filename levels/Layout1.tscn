@@ -3,34 +3,47 @@
 [ext_resource type="PackedScene" path="res://scenes/ennemies/LittleGreen.tscn" id="1"]
 [ext_resource type="PackedScene" path="res://scenes/blocks/LongWood.tscn" id="2"]
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_aup26"]
+
 [node name="Layout1" type="Node2D" unique_id=1956736458]
 
 [node name="Ennemies" type="Node2D" parent="." unique_id=86265740]
 
 [node name="LittleGreen" parent="Ennemies" unique_id=732230805 instance=ExtResource("1")]
 position = Vector2(1988.45, 1017.76)
+destroy_points = 1000
 
 [node name="LittleGreen2" parent="Ennemies" unique_id=1278013066 instance=ExtResource("1")]
 position = Vector2(1993.06, 1195.34)
+destroy_points = 1000
 
 [node name="Blocks" type="Node2D" parent="." unique_id=539902874]
 
 [node name="Base" parent="Blocks" unique_id=1175496960 instance=ExtResource("2")]
 position = Vector2(1993.31, 1234.77)
+destroy_points = 0
 
 [node name="Roof" parent="Blocks" unique_id=444073479 instance=ExtResource("2")]
 position = Vector2(1989.54, 1061.1)
+destroy_points = 0
 
 [node name="LegLeft" parent="Blocks" unique_id=1805356041 instance=ExtResource("2")]
 position = Vector2(1919.04, 1145.49)
 rotation = -1.5737
+destroy_points = 0
 
 [node name="LegRight" parent="Blocks" unique_id=2003934925 instance=ExtResource("2")]
 position = Vector2(2062.51, 1147.38)
 rotation = -1.5737
+destroy_points = 0
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=13779522]
 position = Vector2(1330, 1350)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground" unique_id=562515152]
 polygon = PackedVector2Array(-1330, -100, 1230, -100, 1230, 90, -1330, 90)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1557323116]
+position = Vector2(1279.5, 1618.5)
+scale = Vector2(2559.0002, 737)
+texture = SubResource("PlaceholderTexture2D_aup26")
